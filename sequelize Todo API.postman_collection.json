@@ -1,0 +1,137 @@
+{
+	"variables": [],
+	"info": {
+		"name": "sequelize Todo API",
+		"_postman_id": "f6cc6081-a879-1df5-5cb0-95e72816c0d3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/todos",
+			"request": {
+				"url": "localhost:3000/todos",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/todos",
+			"request": {
+				"url": "localhost:3000/todos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"JS\",\n\t\"description\":\"nodejs sequelize\"\n}"
+				},
+				"description": "POST create todo\t\t"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/todos",
+			"request": {
+				"url": "localhost:3000/todos/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"python\",\n\t\"description\":\"flask\"\n}"
+				},
+				"description": "PUT request to update the todo"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/todos",
+			"request": {
+				"url": "localhost:3000/todos/3",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "craete DELETE request to delete todo"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/todos/image/api/files/upload",
+			"request": {
+				"url": "localhost:3000/todos/image/api/files/upload",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "uploadfile",
+							"value": "",
+							"description": "",
+							"type": "file"
+						}
+					]
+				},
+				"description": "image upload"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/todos/image/api/files/getall",
+			"request": {
+				"url": "localhost:3000/todos/image/api/files/getall",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "GET app data of stored images"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/todos/image/api/files/1",
+			"request": {
+				"url": "localhost:3000/todos/image/api/files/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "GET image by /:id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/todos/image/api/files/update/1",
+			"request": {
+				"url": "localhost:3000/todos/image/api/files/update/1",
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "uploadfile",
+							"value": "",
+							"description": "",
+							"type": "file"
+						}
+					]
+				},
+				"description": "PUT /:id create put request to update the file"
+			},
+			"response": []
+		}
+	]
+}
