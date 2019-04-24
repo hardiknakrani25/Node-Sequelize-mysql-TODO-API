@@ -47,7 +47,36 @@ router.post("/", (req, res, next) => {
     );
 });
 
-router.put("/:id", (req, res, next) => {});
+//update todo using id
+
+router.put("/:id", (req, res, next) => {
+  let todo_id = req.params.id;
+  const { title, description } = req.body;
+
+  model.Todo.update(
+    {
+      title: title,
+      description: description
+    },
+    {
+      where: {
+        id: todo_id
+      }
+    }
+  )
+    .then(todo =>
+      res.json({
+        error: false,
+        message: "Todo is updated."
+      })
+    )
+    .catch(error =>
+      res.json({
+        error: true,
+        error: error
+      })
+    );
+});
 
 router.delete("/:id", (req, res, next) => {});
 
