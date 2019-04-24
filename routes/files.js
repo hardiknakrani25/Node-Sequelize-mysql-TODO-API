@@ -23,6 +23,26 @@ router.post("/api/files/upload", upload.single("uploadfile"), (req, res) => {
   });
 });
 
+router.put("/api/files/update/:id", upload.single("uploadfile"), (req, res) => {
+  const update_id = req.params.id;
+  model.File.update(
+    {
+      type: req.file.mimetype,
+      name: req.file.originalname,
+      data: req.file.buffer
+    },
+    {
+      where: {
+        id: update_id
+      }
+    }
+  ).then(() => {
+    res.send(
+      "File updated successfully! -> filename = " + req.file.originalname
+    );
+  });
+});
+
 router.get("/api/files/getall", (req, res) => {
   model.File.findAll({ attributes: ["id", "name"] }).then(files => {
     res.json(files);
