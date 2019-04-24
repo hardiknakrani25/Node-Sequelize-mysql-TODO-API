@@ -11,7 +11,7 @@ const multer = require("multer");
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
-router.post("/api/files/upload", upload.single("uploadfile"), (req, res) => {
+router.post("/api/files/", upload.single("uploadfile"), (req, res) => {
   model.File.create({
     type: req.file.mimetype,
     name: req.file.originalname,
@@ -23,7 +23,7 @@ router.post("/api/files/upload", upload.single("uploadfile"), (req, res) => {
   });
 });
 
-router.put("/api/files/update/:id", upload.single("uploadfile"), (req, res) => {
+router.put("/api/files/:id", upload.single("uploadfile"), (req, res) => {
   const update_id = req.params.id;
   model.File.update(
     {
@@ -43,7 +43,7 @@ router.put("/api/files/update/:id", upload.single("uploadfile"), (req, res) => {
   });
 });
 
-router.get("/api/files/getall", (req, res) => {
+router.get("/api/files/", (req, res) => {
   model.File.findAll({ attributes: ["id", "name"] }).then(files => {
     res.json(files);
   });
@@ -63,6 +63,5 @@ router.get("/api/files/:id", (req, res) => {
 });
 
 //DELETE /:id
-router.delete("");
 
 module.exports = router;
