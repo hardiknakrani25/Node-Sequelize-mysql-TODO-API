@@ -26,7 +26,14 @@ router.get("/", (req, res, next) => {
 //GET /:id
 
 router.get("/:id", (req, res) => {
-  model.Todo.findByPk(req.params.id).then(todo => res.json(todo));
+  model.Todo.findByPk(req.params.id)
+    .then(todo => res.json(todo))
+    .catch(error =>
+      res.json({
+        error: true,
+        error: error
+      })
+    );
 });
 
 //creaet new todo
