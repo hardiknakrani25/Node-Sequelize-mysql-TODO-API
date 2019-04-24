@@ -22,6 +22,13 @@ router.get("/", (req, res, next) => {
     );
 });
 
+//get todo by /:id
+//GET /:id
+
+router.get("/:id", (req, res) => {
+  model.Todo.findByPk(req.params.id).then(todo => res.json(todo));
+});
+
 //creaet new todo
 //post request
 
