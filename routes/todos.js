@@ -22,7 +22,30 @@ router.get("/", (req, res, next) => {
     );
 });
 
-router.post("/", (req, res, next) => {});
+//creaet new todo
+//post request
+
+router.post("/", (req, res, next) => {
+  const { title, description } = req.body;
+  model.Todo.create({
+    title: title,
+    description: description
+  })
+    .then(todo =>
+      res.status(201).json({
+        error: false,
+        data: todo,
+        message: "New todo has been created."
+      })
+    )
+    .catch(error =>
+      res.json({
+        error: true,
+        data: [],
+        error: error
+      })
+    );
+});
 
 router.put("/:id", (req, res, next) => {});
 
