@@ -132,6 +132,17 @@
 				"description": "PUT /:id create put request to update the file"
 			},
 			"response": []
+		},
+		{
+			"name": "localhost:3000/todos/image/api/files/2",
+			"request": {
+				"url": "localhost:3000/todos/image/api/files/2",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "DELETE :/id delete file by id"
+			},
+			"response": []
 		}
 	]
 }
