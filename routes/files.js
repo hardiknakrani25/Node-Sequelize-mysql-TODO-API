@@ -62,4 +62,7 @@ router.get("/api/files/:id", (req, res) => {
   });
 });
 
+//DELETE /:id
+router.delete("");
+
 module.exports = router;

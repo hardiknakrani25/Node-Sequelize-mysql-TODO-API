@@ -72,7 +72,7 @@
 		{
 			"name": "localhost:3000/todos/image/api/files/upload",
 			"request": {
-				"url": "localhost:3000/todos/image/api/files/upload",
+				"url": "localhost:3000/todos/image/api/files/",
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -93,7 +93,7 @@
 		{
 			"name": "localhost:3000/todos/image/api/files/getall",
 			"request": {
-				"url": "localhost:3000/todos/image/api/files/getall",
+				"url": "localhost:3000/todos/image/api/files/",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -115,7 +115,7 @@
 		{
 			"name": "localhost:3000/todos/image/api/files/update/1",
 			"request": {
-				"url": "localhost:3000/todos/image/api/files/update/1",
+				"url": "localhost:3000/todos/image/api/files/1",
 				"method": "PUT",
 				"header": [],
 				"body": {
