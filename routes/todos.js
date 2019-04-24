@@ -78,6 +78,28 @@ router.put("/:id", (req, res, next) => {
     );
 });
 
-router.delete("/:id", (req, res, next) => {});
+//delete todo by id
+//delete request
+router.delete("/:id", (req, res, next) => {
+  const todo_id = req.params.id;
+
+  model.Todo.destroy({
+    where: {
+      id: todo_id
+    }
+  })
+    .then(status =>
+      res.json({
+        error: false,
+        message: "Todo has been deleted."
+      })
+    )
+    .catch(error =>
+      res.json({
+        error: true,
+        error: error
+      })
+    );
+});
 
 module.exports = router;
